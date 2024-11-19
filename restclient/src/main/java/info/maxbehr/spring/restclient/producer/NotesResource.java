@@ -1,5 +1,6 @@
 package info.maxbehr.spring.restclient.producer;
 
+import info.maxbehr.spring.restclient.model.Note;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
