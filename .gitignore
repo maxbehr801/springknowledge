@@ -40,3 +40,4 @@ bin/
 
 ### Mac OS ###
 .DS_Store!/.idea/
+/.idea/git_toolbox_prj.xml
