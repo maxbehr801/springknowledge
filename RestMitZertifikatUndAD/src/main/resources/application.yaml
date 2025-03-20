@@ -1,0 +1,38 @@
+spring:
+  ssl:
+    bundle:
+      jks:
+        web-server:
+          key:
+            alias: "servercert"
+          keystore:
+            location: "classpath:/keystore/myserverkeystore.p12"
+            password: "myserverkeystorepw"
+            type: "PKCS12"
+  security:
+    user:
+      name: maxbehr
+      password: maxbehr
+server:
+  ssl:
+    bundle: web-server
+    client-auth: none
+  port: 8443
+
+camunda:
+  client:
+    auth:
+      client-id: ${CLIENT_ID}
+      client-secret: ${CLIENT_SECRET}
+    cluster-id: ${CLUSTER_ID}
+    region: ${CLUSTER_REGION}
+    mode: ${CLIENT_MODE}
+    zeebe:
+      defaults:
+        stream-enabled: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: metrics, health, info, env, beans, configprops, loggers, trace, threaddump, heapdump, jolokia, prometheus
